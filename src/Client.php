@@ -28,12 +28,12 @@ class Client
     /**
      * DEV API URI
      */
-    const DEV_URl = 'https://dev-api.bpt-store.com/api/v{apiVersionNumber}';
+    const DEV_URl = 'https://dev-api.bpt-store.com/api/v{apiVersionNumber}/';
 
     /**
      * PROD API URI
      */
-    const PROD_URl = 'https://api.bpt-store.com/api/v{apiVersionNumber}';
+    const PROD_URl = 'https://api.bpt-store.com/api/v{apiVersionNumber}/';
 
     /**
      * @var array list of necessary options
@@ -72,7 +72,7 @@ class Client
     public function __construct(array $options)
     {
         $this->processOptions($options);
-        $this->httpClient = new GuzzleClient(['base_uri' => $this->options['api']]);
+        $this->httpClient = new GuzzleClient(['base_uri' => $this->options['url']]);
     }
 
     /**
@@ -87,7 +87,7 @@ class Client
             throw new \InvalidArgumentException('Password is required!');
         }
         $options['sandbox'] = $option['sandbox'] ?? false;
-        $options['url'] = $this->resolveAliases($options['dev'] ? self::DEV_URl : self::PROD_URl);
+        $options['url'] = $this->resolveAliases($options['sandbox'] ? self::DEV_URl : self::PROD_URl);
         $options['maxAttempts'] = $options['maxAttempts'] ?? self::DEFAULT_CONNECTION_ATTEMPTS;
 
         $this->options = $options;
@@ -125,7 +125,7 @@ class Client
         $defaultOptions = ['headers' => ['Authorization' => $this->authToken]];
 
         try {
-            $response = $this->httpClient()->request(
+            $response = $this->httpClient->request(
                 $method,
                 $this->resolveAliases($uri),
                 array_merge_recursive($defaultOptions, $options)
@@ -154,7 +154,7 @@ class Client
             return;
         }
 
-        $resp = $this->httpClient()->request('POST', 'login', [
+        $resp = $this->httpClient->request('POST', 'login', [
             RequestOptions::JSON => [
                 'login' => $this->options['login'],
                 'password' => $this->options['password']

@@ -8,6 +8,11 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * Class Client
+ * @package kialex\BptStore
+ * @see https://dev-api.bpt-store.com/api-docs/
+ */
 class Client
 {
     /**

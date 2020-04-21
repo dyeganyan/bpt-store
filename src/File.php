@@ -1,6 +1,6 @@
 <?php
 
-namespace kialex\BptStore;
+namespace Kialex\BptStore;
 
 use GuzzleHttp;
 use GuzzleHttp\RequestOptions;

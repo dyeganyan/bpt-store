@@ -34,7 +34,7 @@ $client = new \Kialex\BptStore\Client([
     // 'maxAttempts' => 5 // Attempts to reconnect if something went wrong, Default is `3`
     // 'versionNumber' => 1 // API version number, Default is `1`
     // 'url' => ''https://dev-api.bpt-store.com/api/v{apiVersionNumber}/' // API URL, Default: depends of mode
-    // See `DEV_URl` nad `PROD_URL` constants of class
+    // See `DEV_URl` and `PROD_URL` constants of class
 ]);
 
 $bptFileCloud = new \Kialex\BptStore\File($client);
@@ -44,8 +44,8 @@ Push file to BPT storage
 ```php
 $fileData = $bptFileCloud->add(
     'path_to_file', // Full path to file or Absolute URL
-    445566, // Groud Id
-    true // If You want create private file -> set `false`. Default is `true`.
+    445566, // Group Id
+    true // If U want to create a private file -> set `false`. Default is `true`.
 );
 ```
 

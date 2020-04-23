@@ -86,7 +86,7 @@ class Client
         if (!isset($options['password'])) {
             throw new \InvalidArgumentException('Password is required!');
         }
-        $options['sandbox'] = $option['sandbox'] ?? false;
+        $options['sandbox'] = $options['sandbox'] ?? false;
         $options['url'] = $this->resolveAliases($options['sandbox'] ? self::DEV_URl : self::PROD_URl);
         $options['maxAttempts'] = $options['maxAttempts'] ?? self::DEFAULT_CONNECTION_ATTEMPTS;
 

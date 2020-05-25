@@ -60,7 +60,7 @@ class File
      * ```
      * @see https://dev-api.bpt-store.com/api-docs/#/File/ResourceAddFile
      */
-    public function add(string $path, int $groupId, bool $isPublic = true): object
+    public function add(string $path, int $groupId, bool $isPublic = true): \stdClass
     {
         $response = $this->client->request('POST', 'users/{userUuid}/files', [
             RequestOptions::MULTIPART => [
@@ -74,7 +74,7 @@ class File
                 ],
                 [
                     'name' => 'file',
-                    'contents' => fopen($path, 'r')
+                    'contents' => fopen($path, 'rb')
                 ]
             ]
         ]);

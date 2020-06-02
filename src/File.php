@@ -39,7 +39,7 @@ class File
      */
     public function getPrivateUrl(string $uuid): string
     {
-        return $this->client->resolveAliases("{baseUrl}/users/{userUuid}/files/{$hash}");
+        return $this->client->resolveAliases("{baseUrl}/users/{userUuid}/files/{$uuid}");
     }
 
     /**

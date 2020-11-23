@@ -60,7 +60,7 @@ class File
      * ```
      * @see https://dev-api.bpt-store.com/api-docs/#/File/ResourceAddFile
      */
-    public function add(string $path, int $groupId, bool $isPublic = true): \stdClass
+    public function add(string $path, string $groupId, bool $isPublic = true): \stdClass
     {
         $response = $this->client->request('POST', 'users/{userUuid}/files', [
             RequestOptions::MULTIPART => [

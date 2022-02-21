@@ -11,7 +11,7 @@ curl -sS https://getcomposer.org/installer | php
 Next, run the Composer command to install the latest stable version of Guzzle:
 
 ```bash
-composer require kialex/bpt-store
+composer require businessprocess/bpt-store
 ```
 
 After installing, you need to require Composer's autoloader:

@@ -25,15 +25,6 @@ class Client
      */
     const DEFAULT_CONNECTION_ATTEMPTS = 3;
 
-    /**
-     * DEV API URI
-     */
-    const DEV_URl = 'https://dev-api.bpt-store.com/api/v{apiVersionNumber}/';
-
-    /**
-     * PROD API URI
-     */
-    const PROD_URl = 'https://api.bpt-store.com/api/v{apiVersionNumber}/';
 
     /**
      * @var array list of necessary options
@@ -86,12 +77,10 @@ class Client
         if (!isset($options['password'])) {
             throw new \InvalidArgumentException('Password is required!');
         }
+        if (!isset($options['url'])) {
+            throw new \InvalidArgumentException('URL is required!');
+        }
         $options['sandbox'] = $options['sandbox'] ?? false;
-        $options['url'] = str_replace(
-            '{apiVersionNumber}',
-            $this->options['versionNumber'] ?? self::API_VERSION,
-            $options['sandbox'] ? self::DEV_URl : self::PROD_URl
-        );
         $options['maxAttempts'] = $options['maxAttempts'] ?? self::DEFAULT_CONNECTION_ATTEMPTS;
 
         $this->options = $options;

@@ -27,13 +27,13 @@ $client = new \Kialex\BptStore\Client([
     //
     'login' => 'bpt_store_login',
     'password' => 'bpt_store_password',
+    'url' => 'https://fs-api-dev.webwellness.net/api/v1/',
     'sandbox' => true, // `false` is Production mode. Default is `false`
     //
     // Optional
     //
     // 'maxAttempts' => 5 // Attempts to reconnect if something went wrong, Default is `3`
     // 'versionNumber' => 1 // API version number, Default is `1`
-    // 'url' => ''https://dev-api.bpt-store.com/api/v{apiVersionNumber}/' // API URL, Default: depends of mode
     // See `DEV_URl` and `PROD_URL` constants of class
 ]);
 

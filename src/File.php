@@ -24,7 +24,7 @@ class File
     /**
      * @param string $hash
      * @return string public file link
-     * @see https://dev-api.bpt-store.com/api-docs/#/File/ResourceGetFileByContentHash
+     * @see https://fs-api-dev.webwellness.net/api-docs/#/File/ResourceGetFileByContentHash
      */
     public function getPublicUrl(string $hash): string
     {
@@ -35,7 +35,7 @@ class File
      *
      * @param string $uuid
      * @return string private file link
-     * @see https://dev-api.bpt-store.com/api-docs/#/File/ResourceGetFile
+     * @see https://fs-api-dev.webwellness.net/api-docs/#/File/ResourceGetFile
      */
     public function getPrivateUrl(string $uuid): string
     {
@@ -58,7 +58,7 @@ class File
      *   "hash": "58b6ebbd1689275b408feab2f187e367"
      * }
      * ```
-     * @see https://dev-api.bpt-store.com/api-docs/#/File/ResourceAddFile
+     * @see https://fs-api-dev.webwellness.net/api-docs/#/File/ResourceAddFile
      */
     public function add(string $path, $groupId, bool $isPublic = true): \stdClass
     {

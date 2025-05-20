@@ -1,7 +1,7 @@
 {
     "name": "businessprocess/bpt-store",
     "description": "BPT Cloud File Storage. Keep your file security!",
-    "homepage": "https://dev-api.bpt-store.com/api-docs/",
+    "homepage": "https://fs-api-dev.webwellness.net/api-docs/",
     "type": "extention",
     "license": "MIT",
     "authors": [

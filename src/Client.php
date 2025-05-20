@@ -11,7 +11,7 @@ use Psr\Http\Message\ResponseInterface;
 /**
  * Class Client
  * @package kialex\BptStore
- * @see https://dev-api.bpt-store.com/api-docs/
+ * @see https://fs-api-dev.webwellness.net/api-docs/
  */
 class Client
 {
